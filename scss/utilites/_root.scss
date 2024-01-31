@@ -1,0 +1,11 @@
+@use 'vars' as v;
+@use 'sass:math';
+
+:root {
+	--text-dark: #{v.$text-dark};
+	--text-light: #{v.$text-light};
+	--container-padding: #{math.div(v.$containerPadding, 2)}px;
+	--bd-light: #{v.$bd-light};
+	--bd-dark: #{v.$bd-dark};
+	--bg-body: #{v.$bg-body};
+}

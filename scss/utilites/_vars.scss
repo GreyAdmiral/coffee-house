@@ -1,0 +1,15 @@
+// ? Цвета
+$text-light: #B0907A;
+$text-dark: #403F3D;
+$bd-light: #C1B6AD;
+$bd-dark: #665F55;
+$bg-body: #E1D4C9;
+
+// ? Шрифты
+$font-size: 16px;
+
+// ? Размеры
+$layout: 1440;
+$layoutmin: 380;
+$containerPadding: 80;
+$container: #{$layout - $containerPadding}px;

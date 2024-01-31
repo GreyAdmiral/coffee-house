@@ -1,0 +1,106 @@
+@use "../utilites/mixins" as m;
+@use "../utilites/vars" as v;
+@use "../utilites/extends";
+
+.mobile-app {
+	@include m.flexing(space-between, center);
+	column-gap: 100px;
+
+	@include m.smalltablet {
+		flex-direction: column;
+		row-gap: 100px;
+	}
+
+	&__info {
+		@include m.colflexing(center, null);
+		row-gap: 40px;
+		flex: 0 1 calc(50% - 50px);
+		font-family: Inter;
+		color: var(--text-dark, v.$text-dark);
+	}
+
+	&__title {
+		font-size: 60px;
+		font-weight: 600;
+		line-height: 1.25;
+
+		@include m.mobile {
+			font-size: 32px;
+		}
+
+		span {
+			font-style: italic;
+			color: var(--text-light, v.$text-light);
+		}
+	}
+
+	&__slogan {
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 1.5;
+	}
+
+	&__links {
+		@include m.flexing(flex-start, center);
+		column-gap: 20px;
+
+		@include m.mobile {
+			@include m.colflexing(flex-start);
+			row-gap: 20px;
+		}
+	}
+
+	&__link {
+		@include m.flexing(null, center);
+		min-width: 200px;
+		padding: 12px 20px;
+		column-gap: 8px;
+		color: inherit;
+		border-radius: 100px;
+		border: 1px solid var(--bd-dark, v.$bd-dark);
+		transition: color 0.5s ease 0s, background-color 0.5s ease 0s;
+		cursor: pointer;
+
+		@include m.hover {
+			color: var(--bg-body, v.$bg-body);
+			background-color: var(--bd-dark, v.$bd-dark);
+		}
+	}
+
+	&__icon {
+		width: 36px;
+		height: 36px;
+
+		svg {
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	&__text {
+		@extend %columnflex;
+		row-gap: 2px;
+	}
+
+	&__available {
+		font-size: 10px;
+		font-weight: 600;
+		line-height: 1.4;
+	}
+
+	&__brand {
+		font-family: Inter;
+		font-size: 16px;
+		font-weight: 600;
+		line-height: 1.5;
+	}
+
+	&__image {
+		max-width: 100%;
+		height: auto;
+	}
+}
+
+.main__mobile-app {
+	margin-bottom: 60px;
+}

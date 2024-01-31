@@ -1,0 +1,115 @@
+@use "../utilites/vars" as v;
+@use "../utilites/mixins" as m;
+@use "../utilites/extends";
+
+.enjoy {
+	position: relative;
+	padding: 100px;
+	background: url(../images/bgcoffe.jpg) center center / cover no-repeat;
+	border-radius: 40px;
+	overflow: hidden;
+
+	@include m.membrane(3);
+
+	video {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		object-fit: cover;
+		object-position: center;
+		z-index: 0;
+	}
+
+	@include m.smalltablet {
+		padding: 100px 60px;
+	}
+
+	@include m.mobile {
+		padding: 60px 16px;
+	}
+
+	&__info {
+		position: relative;
+		@extend %columnflex;
+		row-gap: 40px;
+		max-width: 45%;
+		font-family: Inter;
+		z-index: 2;
+
+		@include m.smalltablet {
+			max-width: 100%;
+		}
+	}
+
+	&__bigtext {
+		font-size: 72px;
+		font-weight: 600;
+		line-height: 1.05;
+		color: var(--bg-body, v.$bg-body);
+
+		@include m.mobile {
+			font-size: 42px;
+			line-height: 1.15;
+		}
+
+		span {
+			color: var(--text-light, v.$text-light);
+			font-style: italic;
+		}
+	}
+
+	&__smalltext {
+		color: var(--bg-body, v.$bg-body);
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 1.5;
+	}
+
+	&__button {
+		align-self: flex-start;
+		justify-content: center;
+		display: flex;
+		align-items: center;
+		padding: 20px 78px;
+		max-width: 200px;
+		border-radius: 100px;
+		color: var(--text-dark, v.$text-dark);
+		background-color: var(--bg-body, v.$bg-body);
+		font-weight: 600;
+		line-height: 1.5;
+
+		span {
+			position: relative;
+			transition: transform 0.5s ease 0s, opacity 0.5s ease 0.45s;
+
+			&::after {
+				content: url(../images/cup.svg);
+				display: inline-block;
+				position: absolute;
+				width: 20px;
+				height: 100%;
+				vertical-align: middle;
+				transform: translateX(-7px);
+				transition: transform 0.5s ease 0s, opacity 0.4s ease 0s;
+				opacity: 0;
+			}
+		}
+
+		@include m.hover {
+			span {
+				transform: translateX(-4px);
+
+				&::after {
+					transform: translateX(4px);
+					opacity: 1;
+				}
+			}
+		}
+	}
+}
+
+.main__enjoy {
+	@extend %mb100;
+}

@@ -1,0 +1,32 @@
+// ? Подключение кастомного обнуления
+@forward "../utilites/nullstyle";
+
+// ? Подключение кастомного обнуления
+@forward "../components/fonts";
+
+// ? Подключение body
+@forward "../blocks/body";
+
+// ? Подключение шапки
+@forward "../blocks/header";
+
+// ? Подключение main
+@forward "../blocks/main";
+
+// ? Подключение подвала
+@forward "../blocks/footer";
+
+// ? Подключение enjoy
+@forward "../blocks/enjoy";
+
+// ? Подключение favourites_coffee
+@forward "../blocks/favourites_coffee";
+
+// ? Подключение about
+@forward "../blocks/about";
+
+// ? Подключение mobile app
+@forward "../blocks/mobile_app";
+
+// ? Подключение menu
+@forward "../blocks/menu";

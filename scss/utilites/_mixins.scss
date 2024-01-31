@@ -1,0 +1,107 @@
+@use "../utilites/vars" as v;
+
+// Флексы
+@mixin flexing($js: stretch, $ai: $js) {
+	display: flex;
+	justify-content: $js;
+	align-items: $ai;
+}
+
+@mixin iflexing($js: stretch, $ai: $js) {
+	display: inline-flex;
+	justify-content: $js;
+	align-items: $ai;
+}
+
+@mixin colflexing($js: stretch, $ai: $js) {
+	display: flex;
+	flex-direction: column;
+	justify-content: $js;
+	align-items: $ai;
+}
+
+@mixin icolflexing($js: stretch, $ai: $js) {
+	display: inline-flex;
+	flex-direction: column;
+	justify-content: $js;
+	align-items: $ai;
+}
+
+@mixin colflex {
+	display: flex;
+	flex-direction: column;
+}
+
+// Брейкпоинты
+@mixin desktop {
+	@media (min-width: (1025px)) {
+		@content;
+	}
+}
+
+@mixin oversmalltablet {
+	@media (min-width: (769px)) {
+		@content;
+	}
+}
+
+@mixin oversmallmobile {
+	@media (min-width: (380px)) {
+		@content;
+	}
+}
+
+@mixin bigdesktop {
+	@media (max-width: (1440.5px)) {
+		@content;
+	}
+}
+
+@mixin tablet {
+	@media (max-width: (1024.5px)) {
+		@content;
+	}
+}
+
+@mixin smalltablet {
+	@media (max-width: (768.5px)) {
+		@content;
+	}
+}
+
+@mixin mobile {
+	@media (max-width: (576.5px)) {
+		@content;
+	}
+}
+
+@mixin smallmobile {
+	@media (max-width: (379.5px)) {
+		@content;
+	}
+}
+
+// Стили наведения
+@mixin hover {
+	@media (any-hover: hover) {
+		&:hover {
+			@content;
+		}
+	}
+}
+
+// Эффект пленки над объектом
+@mixin membrane($opacity: 1, $color: black) {
+	&::before {
+		content: "";
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background-color: $color;
+		opacity: $opacity * 0.1;
+		z-index: 1;
+		pointer-events: none;
+	}
+}

@@ -1,0 +1,195 @@
+@use "../utilites/mixins" as m;
+@use "../utilites/vars" as v;
+@use "../utilites/extends";
+
+.menu {
+	@include m.colflexing(null);
+	row-gap: 40px;
+	width: 100%;
+	font-family: Inter;
+	color: var(--text-dark, v.$text-dark);
+
+	&__title {
+		font-size: 60px;
+		font-weight: 600;
+		line-height: 1.25;
+		text-align: center;
+		max-width: 58.823529%; /* 800/1360 */
+		margin: 0 auto;
+
+		@include m.smalltablet {
+			max-width: 100%;
+		}
+
+		@include m.mobile {
+			font-size: 32px;
+		}
+
+		span {
+			color: var(--text-light, v.$text-light);
+			font-style: italic;
+		}
+	}
+
+	&__drinks {
+		@extend %centerflex;
+		column-gap: 16px;
+
+		@include m.mobile {
+			column-gap: 8px;
+		}
+	}
+
+	&__drink {
+		@include m.flexing(null, center);
+		column-gap: 8px;
+		padding: 8px 16px 8px 8px;
+		border-radius: 100px;
+		border: 1px solid var(--bd-light, v.$bd-light);
+		transition: color 0.4s ease 0s, background-color 0.4s ease 0s;
+		cursor: pointer;
+
+		&,
+		span {
+			font-size: 16px;
+			font-weight: 600;
+			line-height: 1.5;
+		}
+
+		&.current {
+			color: var(--bg-body, v.$bg-body);
+			background-color: var(--bd-dark, v.$bd-dark);
+		}
+
+		&:not(.current) {
+			@include m.hover {
+				color: var(--bg-body, v.$bg-body);
+				background-color: var(--bd-dark, v.$bd-dark);
+			}
+		}
+	}
+
+	&__cards {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+		gap: 40px;
+		grid-auto-rows: 1fr;
+
+		@include m.smalltablet {
+			padding-right: 12px;
+			padding-left: 12px;
+		}
+
+		@include m.mobile {
+			padding-right: 19px;
+			padding-left: 19px;
+		}
+	}
+
+	&__card {
+		overflow: hidden;
+	}
+
+	&__refresh {
+		width: 60px;
+		height: 60px;
+		padding: 18px;
+		margin: 0 auto;
+		border: 1px solid var(--bd-dark, v.$bd-dark);
+		border-radius: 50%;
+
+		@include m.oversmalltablet {
+			display: none;
+		}
+
+		svg {
+			width: 100%;
+			height: 100%;
+		}
+	}
+}
+
+.card {
+	display: grid;
+	grid-auto-flow: row;
+	grid-template: auto auto 1fr auto / 1fr;
+	row-gap: 12px;
+	font-family: Inter;
+	border: 1px solid var(--bd-light, v.$bd-light);
+	border-radius: 40px;
+	cursor: pointer;
+
+	@include m.hover {
+		.card__image img {
+			transform: scale(1);
+		}
+	}
+
+	&__image {
+		position: relative;
+		padding: 0 0 100% 0;
+		border-radius: 40px;
+		overflow: hidden;
+
+		img {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			object-fit: cover;
+			transform: scale(1.1);
+			transition: transform 0.5s ease 0s;
+		}
+	}
+
+	&__title {
+		font-size: 24px;
+		font-weight: 600;
+		line-height: 1.25;
+		padding: 8px 20px 0;
+	}
+
+	&__text {
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 1.5;
+		padding: 0 20px;
+	}
+
+	&__price {
+		font-size: 24px;
+		font-weight: 600;
+		line-height: 1.25;
+		padding: 0 20px 20px;
+	}
+}
+
+.drinks {
+	&__image {
+		@extend %centerflex;
+		width: 30px;
+		height: 30px;
+		padding: 7px;
+		border-radius: 50%;
+		background-color: var(--bd-light, v.$bd-light);
+		transition: background-color 0.5s ease 0s;
+
+		img {
+			width: 100%;
+			height: 100%;
+		}
+
+		.current & {
+			background-color: var(--bg-body, v.$bg-body);
+		}
+	}
+
+	.menu__drink:not(.current) {
+		@include m.hover {
+			.drinks__image {
+				background-color: var(--bg-body, v.$bg-body);
+			}
+		}
+	}
+}

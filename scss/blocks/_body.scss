@@ -1,0 +1,31 @@
+@use "../utilites/vars" as v;
+@use "../utilites/mixins" as m;
+@use "../utilites/extends";
+@use "sass:math";
+
+html {
+	@extend %smoothscroll;
+}
+
+.wrapper {
+	min-height: 100%;
+	@include m.colflex;
+	overflow: hidden;
+	background-color: var(--bg-body, v.$bg-body) ;
+
+	> * {
+		min-width: 0;
+	}
+}
+
+.container,
+[class*="__container"] {
+	max-width: v.$container;
+	box-sizing: content-box;
+	padding: 0 #{math.div(v.$containerPadding, 2)}px;
+	margin: 0 auto;
+
+	@include m.mobile {
+		padding: 0 16px;
+	}
+}

@@ -1,0 +1,44 @@
+@use 'mixins' as m;
+
+// Флексы
+%centerflex {
+	@include m.flexing(center);
+}
+
+%icenterflex {
+	@include m.iflexing(center);
+}
+
+%centercolflex {
+	@include m.colflexing(center);
+}
+
+%icentercolflex {
+	@include m.icolflexing(center);
+}
+
+%columnflex {
+	@include m.colflex;
+}
+
+// Плавный скролл
+%smoothscroll {
+	@media (prefers-reduced-motion: no-preference) {
+		scroll-behavior: smooth;
+	}
+}
+
+%mb100 {
+	margin-bottom: 100px;
+}
+
+// Отменить выделение
+%noselect {
+	user-select: none;
+	-webkit-user-select: none;
+}
+
+// Отменить выделение при тапе
+%taphighlight {
+	-webkit-tap-highlight-color: transparent;
+}

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
+	<link rel="apple-touch-icon" href="apple-touch-icon.png">
+	<link rel="manifest" href="manifest.json">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<title>Сoffee-House</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+				<div class="header__body">
+					<a href="index.html">
+						<img src="images/logo.svg" class="header__logo" width="100"></img>
+					</a>
+					<div data-burger>
+						<span></span>
+						<span></span>
+					</div>
+					<nav class="header__navigation navigation" data-menu>
+						<ul class="navigation__menu" data-menu-list>
+							<li class="navigation__item" data-menu-item>
+								<a href="index.html#favourites">Favorite coffee</a>
+							</li>
+							<li class="navigation__item" data-menu-item>
+								<a href="index.html#about">About</a>
+							</li>
+							<li class="navigation__item" data-menu-item>
+								<a href="index.html#mobile-app">Mobile app</a>
+							</li>
+							<li class="navigation__item" data-menu-item>
+								<a href="index.html#our-contacts">Contact us</a>
+							</li>
+						</ul>
+
+						<a class="header__link" href="menu.html">Menu</a>
+					</nav>
+				</div>
+			</div>
+		</header>
+		<main class="main">
+			<div class="main__container">
+				<div class="main__body">
+					<section class="menu">
+						<h1 class="menu__title">Behind each of our cups hides an <span>amazing surprise</span></h1>
+						<div class="menu__drinks drinks">
+							<div class="menu__drink current" data-category="coffee">
+								<div class="drinks__image">
+									<img src="./images/coffe.png">
+								</div>
+								<span>Coffee</span>
+							</div>
+
+							<div class="menu__drink" data-category="tea">
+								<div class="drinks__image">
+									<img src="./images/tea.png">
+								</div>
+								<span>Tea</span>
+							</div>
+
+							<div class="menu__drink" data-category="dessert">
+								<div class="drinks__image">
+									<img src="./images/desert.png">
+								</div>
+								<span>Dessert</span>
+							</div>
+						</div>
+
+						<div class="menu__cards"></div>
+
+						<div class="menu__refresh">
+							<svg>
+								<use xlink:href="./images/sprite.svg#refresh"></use>
+							</svg>
+						</div>
+					</section>
+				</div>
+			</div>
+		</main>
+		<footer id="our-contacts" class="footer">
+			<div class="footer__container">
+				<div class="footer__body">
+					<div class="tagline">
+						<div class="tagline__text">Sip, Savor, Smile. <span>It’s coffee time!</span></div>
+						<ul class="tagline__social">
+							<li class="tagline__icon">
+								<a href="#!">
+									<svg>
+										<use xlink:href="images/sprite.svg#twitter"></use>
+									</svg>
+								</a>
+							</li>
+							<li class="tagline__icon">
+								<a href="!#">
+									<svg>
+										<use xlink:href="images/sprite.svg#instagram"></use>
+									</svg>
+								</a>
+							</li>
+							<li class="tagline__icon">
+								<a href="#!">
+									<svg>
+										<use xlink:href="images/sprite.svg#facebook"></use>
+									</svg>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="contacts">
+						<div class="contacts__title">Contact us</div>
+						<ul class="contacts__list">
+							<li class="contacts__item">
+								<svg>
+									<use xlink:href="images/sprite.svg#pinalt"></use>
+								</svg>
+								<span>8558 Green Rd., LA</span>
+							</li>
+							<li class="contacts__item">
+								<svg>
+									<use xlink:href="images/sprite.svg#phone"></use>
+								</svg>
+								<a href="tel:+16035550123">+1 (603) 555-0123</a>
+							</li>
+							<li class="contacts__item">
+								<svg>
+									<use xlink:href="images/sprite.svg#clock"></use>
+								</svg>
+								<span>Mon-Sat: 9:00 AM – 23:00 PM</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+
+	<script src="js/script.js"></script>
+</body>
+
+</html>
